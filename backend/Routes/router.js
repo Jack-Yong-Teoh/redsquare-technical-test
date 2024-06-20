@@ -8,6 +8,7 @@ const client = new MongoClient(uri, {});
 
 async function connect() {
     try {
+        console.log('Connecting to MongoDB...');
         await client.connect();
         console.log('Yes Lah! Connected to MongoDB');
     } catch (error) {
