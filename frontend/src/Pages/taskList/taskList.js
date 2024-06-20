@@ -296,7 +296,7 @@ const TaskList = ({ isRefresh }) => {
         )}
       </Modal>
       <Modal title="Delete Task" open={deleteModalVisible} onOk={handleDeleteConfirm} onCancel={handleDeleteCancel}>
-        <p>Are you sure you want to delete this task? {selectedID}</p>
+        <p>Are you sure you want to delete this task?</p>
       </Modal>
     </>
   );
