@@ -1,11 +1,11 @@
 # Getting Started with the project 
 Develop environment: 
-OS: Windows 10 
-Node version: v20.10.0
-Frontend: React JS with Ant Design
-Backend: Node.js
-Database: MongoDB Cluster
-Responsive: yes
+- OS: Windows 10 
+- Node version: v20.10.0
+- Frontend: React JS with Ant Design
+- Backend: Node.js
+- Database: MongoDB Cluster
+- Responsive: yes
 
 # Backend: 
 - require node version 16.20.1 and above
