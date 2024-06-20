@@ -7,10 +7,10 @@ Develop environment:
 - Database: MongoDB Cluster
 - Responsive: yes
 
-# Branch to use: 
+# Branch to use
 - Use master branch as the main branch
 
-# Backend: 
+# Backend
 - require node version 16.20.1 and above
 - Execute steps below in VS code terminal: 
 1. cd backend
@@ -19,7 +19,7 @@ Develop environment:
 
 note: Manually change the device DNS (IPV4) to 8.8.8.8 if not able to connect to the MongoDB server
 
-# Frontend: 
+# Frontend
 - require node version 18.12.0 and above
 - Execute steps below in VS code terminal: 
 1. cd frontend
@@ -27,7 +27,7 @@ note: Manually change the device DNS (IPV4) to 8.8.8.8 if not able to connect to
 3. START the server first to makesure it can retrieve the data from DB
 3. use yarn start to start the project interface
 
-# Features: 
+# Features
 1. Task Listing - select Manage Task at the side menu
 2. Add new Task - use Add button at top right
 3. View Task details - click on one of the row to view specific details
