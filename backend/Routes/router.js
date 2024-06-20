@@ -4,7 +4,7 @@ const { MongoClient } = require('mongodb');
 const router = express.Router();
 
 const uri = 'mongodb+srv://admin:admin123@mydatabase.53nmflx.mongodb.net/?retryWrites=true&w=majority&appName=MyDatabase';
-const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+const client = new MongoClient(uri, {});
 
 async function connect() {
     try {
