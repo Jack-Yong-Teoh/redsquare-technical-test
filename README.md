@@ -7,8 +7,12 @@ Develop environment:
 - Database: MongoDB Cluster
 - Responsive: yes
 
+# Branch to use: 
+- Use master branch as the main branch
+
 # Backend: 
 - require node version 16.20.1 and above
+In VS code terminal: 
 1. cd backend
 2. use yarn install to get the dependencies
 3. use node main.js to start the server
@@ -17,6 +21,7 @@ note: Manually change the device DNS (IPV4) to 8.8.8.8 if not able to connect to
 
 # Frontend: 
 - require node version 18.12.0 and above
+In VS code terminal:
 1. cd frontend
 2. use yarn install to get the dependencies
 3. START the server first to makesure it can retrieve the data from DB
