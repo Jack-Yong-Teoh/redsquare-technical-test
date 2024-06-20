@@ -1,0 +1,22 @@
+.custom-tag {
+    width: 100px; /* Set the desired width */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.low-priority {
+    transform: rotate(90deg);
+    color: green;
+}
+
+.medium-priority {
+    transform: rotate(90deg);
+    color: blue;
+}
+
+.high-priority {
+    transform: rotate(270deg);
+    color: red;
+}
+  
