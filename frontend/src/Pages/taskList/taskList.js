@@ -22,6 +22,18 @@ const TaskList = ({ isRefresh }) => {
     loadTasks();
   }, [isRefresh]);
 
+  useEffect(() => {
+    if (selectedTask) {
+      form.setFieldsValue({
+        title: selectedTask.title,
+        description: selectedTask.description,
+        status: selectedTask.status,
+        priority: selectedTask.priority,
+        // dateDue: selectedTask.dateDue,
+      });
+    }
+  }, [selectedTask, form]);
+
   const loadTasks = async () => {
     try {
       setLoading(true);
@@ -57,6 +69,7 @@ const TaskList = ({ isRefresh }) => {
       await updateItem(updateValue.key, updateValue);
       loadTasks();
       form.resetFields();
+      setSelectedTask(null);
     } catch (error) {
       console.error('Error updating task', error);
     }
@@ -74,6 +87,8 @@ const TaskList = ({ isRefresh }) => {
         };
         handleUpdateTask(formattedValues);
         loadTasks();
+        form.resetFields();
+        setSelectedTask(null);
         setModalVisible(false);
         setIsEdit(false);
       })
@@ -201,6 +216,7 @@ const TaskList = ({ isRefresh }) => {
         open={modalVisible}
         onCancel={() => {
           form.resetFields();
+          setSelectedTask(null);
           setModalVisible(false);
           setIsEdit(false);
         }}
@@ -210,7 +226,9 @@ const TaskList = ({ isRefresh }) => {
               Close
             </Button>
             {!isEdit ? (
-              <Button type="primary" key="edit" onClick={() => setIsEdit(true)}>
+              <Button type="primary" key="edit" onClick={() => {
+                setIsEdit(true)
+              }}>
                 Edit
               </Button>
             ) : (
@@ -247,7 +265,6 @@ const TaskList = ({ isRefresh }) => {
             <Form.Item
               name="title"
               label="Task Title"
-              initialValue={selectedTask && selectedTask.title}
               rules={[{ required: true, message: 'Please input the task title!' }]}
             >
               <Input placeholder="Enter task title" />
@@ -255,7 +272,6 @@ const TaskList = ({ isRefresh }) => {
             <Form.Item
               name="description"
               label="Task Description"
-              initialValue={selectedTask && selectedTask.description}
               rules={[{ required: true, message: 'Please input the task description!' }]}
             >
               <Input.TextArea placeholder="Enter task description" />
@@ -263,7 +279,6 @@ const TaskList = ({ isRefresh }) => {
             <Form.Item
               name="status"
               label="Status"
-              initialValue={selectedTask && selectedTask.status}
               rules={[{ required: true, message: 'Please select the task status!' }]}
             >
               <Select placeholder="Select status">
@@ -275,7 +290,6 @@ const TaskList = ({ isRefresh }) => {
             <Form.Item
               name="priority"
               label="Priority"
-              initialValue={selectedTask && selectedTask.priority}
               rules={[{ required: true, message: 'Please select the task priority!' }]}
             >
               <Select placeholder="Select priority">
